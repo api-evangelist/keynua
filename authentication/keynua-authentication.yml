@@ -1,0 +1,32 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+docs: https://keynua.github.io/slate/#authentication
+summary:
+  types: [apiKey]
+  api_key_in: [header]
+  oauth2_flows: []
+  notes: >-
+    Every request must carry two header credentials together: x-api-key (the API
+    Key) and authorization (the API Token). Credentials are issued as ID/Secret
+    pairs in the developer settings; the Secret value (not the ID) is sent in each
+    header. Credentials are environment-scoped (separate keys for staging vs
+    production).
+schemes:
+- name: x-api-key
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  description: API Key secret value (not the ID). Required on all requests.
+  sources: [https://keynua.github.io/slate]
+- name: authorization
+  type: apiKey
+  in: header
+  parameter: authorization
+  description: API Token secret value (not the ID). Required on all requests.
+  sources: [https://keynua.github.io/slate]
+environments:
+- name: production
+  base_url: https://api.keynua.com
+- name: staging
+  base_url: https://api.stg.keynua.com
