@@ -1,0 +1,24 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+description: >-
+  Keynua exposes a dedicated staging environment separate from production. There
+  is a full test host with its own environment-scoped API credentials, so
+  integrations can be built and exercised end-to-end before going live. No public
+  fixed "magic" test identity values are published in the docs; testers use real
+  captures against the staging host.
+environments:
+- name: staging
+  base_url: https://api.stg.keynua.com
+  notes: Test environment; requires staging-scoped x-api-key + authorization secrets.
+- name: production
+  base_url: https://api.keynua.com
+credentials:
+  model: ID/Secret pairs issued per environment in developer settings; send the Secret values in x-api-key and authorization.
+limits:
+  max_file_size: 1MB
+  max_video_length_seconds: 15
+  signed_url_expiry_hours: 12
+notes: >-
+  No published test card / test identity fixtures — captures are submitted live
+  against the staging pipeline. Do not fabricate test values.

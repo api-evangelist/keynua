@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: generated
+source: https://keynua.github.io/slate
+skills:
+- file: keynua-create-and-sign-contract.md
+  name: Create and sign a Keynua contract
+  api: https://keynua.github.io/slate
+  operations:
+  - 'PUT /contracts/v1'
+  - 'POST /contracts/v1/sign'
+  - 'POST /contracts/v1/sign/upload'
+  - 'PUT /contracts/v2/sign/batch'
+  - 'GET /contracts/v1/{contractId}'
+- file: keynua-verify-identity.md
+  name: Run a Keynua identity verification
+  api: https://keynua.github.io/slate
+  operations:
+  - 'POST /identity-verification/v1'
+  - 'GET /identity-verification/v1'
+  - 'GET /identity-verification/v1/{verificationId}'
+- file: keynua-send-and-verify-otp.md
+  name: Send and verify a Keynua OTP
+  api: https://keynua.github.io/slate
+  operations:
+  - 'POST /otp/v1/send'
+  - 'POST /otp/v1/verify'
+  - 'GET /otp/v1/info'

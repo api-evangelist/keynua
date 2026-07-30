@@ -1,0 +1,66 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+docs: https://keynua.github.io/slate/#errors
+description: >-
+  Keynua reports per-item processing failures as an error code on the item
+  (surfaced synchronously on the contract object and asynchronously via the
+  ItemError webhook event). Codes are grouped by the item type being processed
+  (document validation, identity verification, video/liveness, facial
+  recognition). This complements the HTTP status codes returned by the REST API.
+envelope:
+  field: error
+  location: item object (contract.items[].error) and ItemError webhook payload
+error_codes:
+- code: DocumentRejectedBySigner
+  area: document
+  meaning: The signer explicitly rejected the document.
+  action: Confirm the document contents with the signer; recreate the contract if needed.
+- code: DidNotPass
+  area: document
+  meaning: The uploaded image was not recognized as a valid document.
+  action: Ask the signer to recapture a clear image of the document.
+- code: DetectLabelsFailed
+  area: document
+  meaning: Document format/label detection failed.
+  action: Retry with a higher-quality, well-lit capture.
+- code: NotValidIdCard
+  area: identity
+  meaning: The submitted ID document is not valid.
+  action: Request a valid government ID and retry verification.
+- code: NotValidExpirationDateInIdCard
+  area: identity
+  meaning: The ID document is expired.
+  action: Request an unexpired ID document.
+- code: ExpirationDateNotDetected
+  area: identity
+  meaning: The expiration date could not be read from the ID card.
+  action: Retry with a clearer capture of the ID card.
+- code: NotAMatch
+  area: facial
+  meaning: The face did not match the ID document photo.
+  action: Ask the signer to retake the selfie/liveness capture.
+- code: ConvertVideoFailed
+  area: video
+  meaning: The submitted video could not be processed.
+  action: Retry the capture; keep videos within the 15-second limit.
+- code: ShortCodeNotFound
+  area: video
+  meaning: The spoken verification code was not detected in the video.
+  action: Ask the signer to clearly speak the requested code.
+- code: TranscriptionFailed
+  area: video
+  meaning: Audio could not be extracted/transcribed from the video.
+  action: Retry the capture in a quieter environment.
+- code: FacemasksDetected
+  area: facial
+  meaning: A face mask was detected during liveness capture.
+  action: Ask the signer to remove the mask and retry.
+- code: ManyFacesDetected
+  area: facial
+  meaning: Multiple faces were detected in the frame.
+  action: Ensure only the signer is in frame and retry.
+- code: ScoreTooLow
+  area: facial
+  meaning: Capture quality/liveness score fell below the acceptance threshold.
+  action: Retry with better lighting and a steady, front-facing capture.

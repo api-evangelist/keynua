@@ -1,0 +1,36 @@
+# Keynua
+
+> Keynua is a Latin American digital identity and electronic signature platform. Design signing flows combining video, drawn, OTP, and digital signatures with biometric identity verification (liveness, facial matching, 3D/selfie/video identification, geopositioning). The REST API covers contracts, document templates, identity verification, OTP, and Deceval promissory notes, delivered to signers over WhatsApp, SMS, or email with signed webhooks. Supports 20+ Latin American identity documents across 20 countries.
+
+## API
+- [Keynua API reference (Slate)](https://keynua.github.io/slate): full REST reference — contracts, signing, templates, identity verification, OTP, Deceval, webhooks, errors.
+- Production base URL: https://api.keynua.com
+- Staging base URL: https://api.stg.keynua.com
+- Auth: two headers on every request — `x-api-key` (API Key Secret) and `authorization` (API Token Secret).
+
+## Operations
+- Contracts: `PUT /contracts/v1`, `GET /contracts/v1/{contractId}`, `DELETE /contracts/v1/{contractId}`, `POST /contracts/v1/{contractId}/delete-documents`, `POST /contracts/v1/approve-contract`, `POST /contracts/v1/decline-contract`
+- Signing: `POST /contracts/v1/sign`, `POST /contracts/v1/sign/upload`, `PUT /contracts/v2/sign/batch`
+- Document templates: `GET /document-templates/v1`, `GET /document-templates/v1/{templateId}`, `POST /document-templates/v1/{templateId}/generate`
+- Identity verification: `POST /identity-verification/v1`, `GET /identity-verification/v1`, `GET /identity-verification/v1/{verificationId}`
+- OTP: `POST /otp/v1/send`, `POST /otp/v1/verify`, `POST /otp/v1/create-as-owner`, `GET /otp/v1/info`
+- Deceval: `POST /deceval/v1/crear-girador-natural`, `POST /deceval/v1/consultar-girador`
+
+## Events (webhooks)
+- ItemWorking, ItemSuccess, ItemError, ContractFinished, ContractDeleted — signed with `Keynua-Signature` and `Keynua-Signature-V2`.
+
+## Docs
+- [Developer settings & webhooks](https://keynua.github.io/slate)
+- [Android integration example](https://github.com/Keynua/android-integration-example)
+- [iOS integration example](https://github.com/Keynua/ios-integration-example)
+- [Web integration example](https://github.com/Keynua/web-integration-example)
+- [GitHub organization](https://github.com/Keynua)
+
+## Company
+- [Website](https://www.keynua.com/en)
+- [Plans / pricing](https://www.keynua.com/en/plans/)
+- [Sign in](https://app.keynua.com?lang=en)
+- [Free trial request](https://www.keynua.com/en/account-request/)
+- [Status page](https://status.keynua.com)
+- [Terms and conditions](https://www.keynua.com/en/legal/terms-and-conditions/)
+- [Privacy policy](https://www.keynua.com/en/legal/privacy-policy/)

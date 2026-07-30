@@ -1,0 +1,66 @@
+generated: '2026-07-19'
+method: derived
+status: candidate
+source: https://keynua.github.io/slate
+description: >-
+  Candidate MCP server derived from the documented Keynua REST operations. Keynua
+  does not publish an official hosted MCP server; this is a proposed tool surface
+  (one tool per documented operation) as a starting point.
+server:
+  name: keynua
+  transport: http
+tools:
+- name: create_contract
+  description: Create a contract with documents and signers.
+  source_operation: PUT /contracts/v1
+- name: get_contract
+  description: Retrieve a contract's details and item states.
+  source_operation: GET /contracts/v1/{contractId}
+- name: delete_contract
+  description: Logically delete a contract.
+  source_operation: DELETE /contracts/v1/{contractId}
+- name: delete_contract_documents
+  description: Permanently delete a contract's documents.
+  source_operation: POST /contracts/v1/{contractId}/delete-documents
+- name: approve_contract
+  description: Approve a contract that requires manual approval.
+  source_operation: POST /contracts/v1/approve-contract
+- name: decline_contract
+  description: Decline a contract.
+  source_operation: POST /contracts/v1/decline-contract
+- name: get_pending_signing_items
+  description: Get pending signing items for a user.
+  source_operation: POST /contracts/v1/sign
+- name: request_upload_credentials
+  description: Request signed credentials to upload signing media.
+  source_operation: POST /contracts/v1/sign/upload
+- name: submit_signing_batch
+  description: Submit signing information for the signer.
+  source_operation: PUT /contracts/v2/sign/batch
+- name: list_document_templates
+  description: List available document templates.
+  source_operation: GET /document-templates/v1
+- name: get_document_template
+  description: Get a document template's details.
+  source_operation: GET /document-templates/v1/{templateId}
+- name: generate_document_from_template
+  description: Generate a pre-filled document from a template.
+  source_operation: POST /document-templates/v1/{templateId}/generate
+- name: create_identity_verification
+  description: Create an identity verification.
+  source_operation: POST /identity-verification/v1
+- name: list_identity_verifications
+  description: List identity verifications.
+  source_operation: GET /identity-verification/v1
+- name: get_identity_verification
+  description: Get an identity verification's details.
+  source_operation: GET /identity-verification/v1/{verificationId}
+- name: send_otp
+  description: Send a one-time password.
+  source_operation: POST /otp/v1/send
+- name: verify_otp
+  description: Verify a one-time password.
+  source_operation: POST /otp/v1/verify
+- name: get_otp_info
+  description: Get information about an OTP.
+  source_operation: GET /otp/v1/info

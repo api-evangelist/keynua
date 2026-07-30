@@ -1,0 +1,56 @@
+generated: '2026-07-19'
+method: derived
+source: https://keynua.github.io/slate
+description: >-
+  Entity-relationship graph derived from the documented Keynua API resources and
+  their nested structures (contracts, items, signers, documents, templates,
+  identity verifications, OTPs, Deceval drawers). No OpenAPI $ref graph is
+  published; relationships are inferred from the documented request/response shapes.
+entities:
+- name: Contract
+  description: A signing envelope containing documents, signers, and processing items.
+  states: [pending_input, working, pending_approval, contract_approval, error, deleted, done]
+  operations: ['PUT /contracts/v1', 'GET /contracts/v1/{contractId}', 'DELETE /contracts/v1/{contractId}']
+- name: Item
+  description: A unit of processing on a contract (document validation, identity, video, facial, signature).
+  parent: Contract
+  notes: Item versions increment per submission attempt; failures carry an error code.
+- name: Document
+  description: A file attached to a contract (max 5 documents per transaction).
+  parent: Contract
+- name: Signer
+  description: A user who must sign or be verified on a contract (max 4 signers per transaction).
+  parent: Contract
+- name: DocumentTemplate
+  description: A reusable template used to generate pre-filled documents.
+  operations: ['GET /document-templates/v1', 'GET /document-templates/v1/{templateId}', 'POST /document-templates/v1/{templateId}/generate']
+- name: IdentityVerification
+  description: A standalone biometric identity verification.
+  operations: ['POST /identity-verification/v1', 'GET /identity-verification/v1', 'GET /identity-verification/v1/{verificationId}']
+- name: OTP
+  description: A one-time password sent to and verified for a signer.
+  operations: ['POST /otp/v1/send', 'POST /otp/v1/verify', 'GET /otp/v1/info']
+- name: DecevalDrawer
+  description: A natural-person drawer (girador) registered for Deceval promissory notes.
+  operations: ['POST /deceval/v1/crear-girador-natural', 'POST /deceval/v1/consultar-girador']
+relationships:
+- from: Contract
+  to: Item
+  type: has_many
+  via: items
+- from: Contract
+  to: Document
+  type: has_many
+  via: documents
+- from: Contract
+  to: Signer
+  type: has_many
+  via: signers
+- from: Item
+  to: Contract
+  type: belongs_to
+  via: contractId
+- from: DocumentTemplate
+  to: Document
+  type: has_many
+  via: generated documents

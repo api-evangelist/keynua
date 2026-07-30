@@ -1,0 +1,18 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+versioning:
+  scheme: uri-path-per-resource
+  notes: Version segment per resource path (/contracts/v1, /contracts/v2/sign/batch, /identity-verification/v1, /otp/v1).
+  docs: https://keynua.github.io/slate
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No public deprecation/sunset policy documented; new resource versions are introduced alongside older ones.
+sla:
+  url: null
+  uptime_target: null
+status_page: https://status.keynua.com
+status_page_provider: StatusPal
+status_components: [API, Landing, Web app, Webhooks, External services, Firma Digital, Cavali, Email Provider, Reniec, SMS/WhatsApp Provider]
+signed_url_expiry_hours: 12

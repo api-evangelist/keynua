@@ -1,0 +1,23 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+spec_type: Webhooks
+description: >-
+  Keynua delivers asynchronous processing events to a webhook endpoint configured
+  in developer settings. Each delivery is signed; verify the Keynua-Signature and
+  Keynua-Signature-V2 headers before trusting the payload.
+delivery:
+  transport: https-post
+  configuration: developer settings webhook endpoint
+  signature_headers: [Keynua-Signature, Keynua-Signature-V2]
+events:
+- name: ItemWorking
+  description: Processing of a contract item has started.
+- name: ItemSuccess
+  description: A contract item completed successfully.
+- name: ItemError
+  description: A contract item failed processing; payload carries an error code (see errors/keynua-error-codes.yml).
+- name: ContractFinished
+  description: All signing was completed and the contract is finished.
+- name: ContractDeleted
+  description: A contract was deleted.

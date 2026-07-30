@@ -1,0 +1,46 @@
+generated: '2026-07-19'
+method: searched
+source: https://keynua.github.io/slate
+description: Cross-cutting request/response semantics for the Keynua API, captured from the Slate API reference.
+authentication:
+  style: dual apiKey headers (x-api-key + authorization), environment-scoped secrets
+  ref: authentication/keynua-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header is documented. Item versions increment on each
+    submission attempt rather than deduplicating; callers should treat contract
+    creation as non-idempotent.
+pagination:
+  style: offset
+  params:
+  - name: startAt
+    description: Zero-based offset to start the page at.
+  - name: limit
+    description: Page size (default 50).
+  default_limit: 50
+versioning:
+  style: uri-path-per-resource
+  notes: >-
+    Each resource path carries its own version segment (e.g. /contracts/v1,
+    /contracts/v2/sign/batch, /identity-verification/v1, /otp/v1). Versions are
+    introduced per endpoint rather than as a single global API version.
+error_envelope:
+  field: error
+  ref: errors/keynua-error-codes.yml
+  notes: Per-item processing failures surface as a code on contract.items[].error and in the ItemError webhook.
+webhooks:
+  ref: asyncapi/keynua-webhooks.yml
+  signature_headers: [Keynua-Signature, Keynua-Signature-V2]
+media:
+  upload_flow: >-
+    Two-step upload — POST /contracts/v1/sign/upload to request signed upload
+    credentials, then PUT the file to the returned URL.
+  max_file_size: 1MB
+  max_video_length_seconds: 15
+  signed_url_expiry_hours: 12
+delivery_channels: [whatsapp, sms, email]
+environments:
+  production: https://api.keynua.com
+  staging: https://api.stg.keynua.com
+contract_states: [pending_input, working, pending_approval, contract_approval, error, deleted, done]
