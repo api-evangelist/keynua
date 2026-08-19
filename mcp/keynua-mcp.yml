@@ -2,10 +2,9 @@ generated: '2026-07-19'
 method: derived
 status: candidate
 source: https://keynua.github.io/slate
-description: >-
-  Candidate MCP server derived from the documented Keynua REST operations. Keynua
-  does not publish an official hosted MCP server; this is a proposed tool surface
-  (one tool per documented operation) as a starting point.
+description: Candidate MCP server derived from the documented Keynua REST operations. Keynua does not
+  publish an official hosted MCP server; this is a proposed tool surface (one tool per documented operation)
+  as a starting point.
 server:
   name: keynua
   transport: http
@@ -64,3 +63,9 @@ tools:
 - name: get_otp_info
   description: Get information about an OTP.
   source_operation: GET /otp/v1/info
+deployment:
+  mode: none
+  verified: derived
+  tools: 18
+  checked: '2026-08-12'
+  source: catalog MCP census
