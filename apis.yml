@@ -47,7 +47,7 @@ created: '2026-07-17'
 modified: '2026-07-19'
 tags:
 - Company
-- Electronic Signature
+- E-Signature
 - Digital Signature
 - Identity Verification
 - Biometrics
@@ -77,6 +77,11 @@ apis:
   humanURL: https://keynua.github.io/slate
   baseURL: https://api.keynua.com
   tags:
+  - E-Signature
+  - Identity Verification
+  - Contracts
+  - OTP
+  tags_raw:
   - Electronic Signature
   - Identity Verification
   - Contracts
