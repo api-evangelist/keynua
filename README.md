@@ -64,6 +64,107 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Keynua is a company surfaced as a portfolio company of point-nine and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Keynua is a Latin American digital identity and electronic signature platform that lets businesses design signing flows combining video, drawn, OTP, and digital signatures with biometric identity verification — liveness detection, facial matching, 3D and selfie identification, and geopositioning. Its REST API covers contracts, document templates, identity verification, OTP, and Deceval promissory notes, delivering requests to signers over WhatsApp, SMS, or email and emitting webhooks for asynchronous processing events. It supports 20+ Latin American identity documents across 20 countries and serves financial services, real estate, human resources, commercial contracts, and sports betting.
 
-Backed by: point-nine — https://www.keynua.com/en
+**Areas:** Company · E-Signature · Digital Signature · Identity Verification · Biometrics · KYC · Onboarding · OTP · Webhook · Latin America
+
+## Keynua on APIs.io
+
+Everything profiled for Keynua is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/keynua/](https://apis.io/providers/keynua/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Keynua API](https://apis.io/apis/keynua/keynua-api/) — REST API for creating contracts, sending them to signers over WhatsApp/SMS/email, running biometric identity verification, generating documents from…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Keynua Webhooks](https://apis.io/asyncapis/keynua/keynua-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [keynua](https://apis.io/servers/keynua/keynua/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Keynua Authentication](https://apis.io/security/keynua/keynua-authentication/)
+- [Keynua Domain Security](https://apis.io/security/keynua/keynua-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.keynua.com/en)
+- [Documentation](https://keynua.github.io/slate)
+- [Getting started](https://keynua.github.io/slate/#introduction)
+- [API reference](https://keynua.github.io/slate)
+- [Pricing](https://www.keynua.com/en/plans/)
+- [Sign up](https://www.keynua.com/en/account-request/)
+- [Terms of service](https://www.keynua.com/en/legal/terms-and-conditions/)
+- [Privacy policy](https://www.keynua.com/en/legal/privacy-policy/)
+- [GitHub](https://github.com/Keynua)
+- [Status](https://status.keynua.com)
+
+## API Evangelist rating
+
+**Kin Score 41.4** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 58.9 |
+| Access clarity | 44.7 |
+
+**Agent readiness 23.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | yes |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 18.9** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/keynua/](https://apis.io/providers/keynua/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Keynua: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/keynua/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
